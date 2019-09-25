@@ -1,4 +1,5 @@
 ﻿using System;
+using VirtualIPSuite.Utilities;
 
 namespace VirtualIPSuite
 {
@@ -6,7 +7,8 @@ namespace VirtualIPSuite
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var crc32 = Checksum.Instance.CRC("123456789");
+            Logger.Instance.LogWriter.Verbose(crc32.ToString("X"));
         }
     }
 }
